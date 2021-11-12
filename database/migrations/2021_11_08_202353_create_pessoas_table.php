@@ -17,7 +17,7 @@ class CreatePessoasTable extends Migration
             $table->id();
             $table->string('nome', 20);
             $table->string('sobre_nome', 50);
-            $table->string('cpf');
+            $table->string('cpf')->unique();
             $table->timestamps();
         });
     }

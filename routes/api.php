@@ -20,9 +20,9 @@ use App\Http\Controllers\api\ViaCepController;
 Route::get('cidadoes', [CidadaoController::class, 'index']);
 Route::get('cidadaocpf', [CidadaoController::class, 'buscaCpf']);
 Route::get('cidadao/{id}', [CidadaoController::class, 'show']);
-Route::put('cidadao/{id}', [CidadaoController::class, 'update']);
-Route::post('cidadao', [CidadaoController::class, 'store']);
-Route::delete('cidadao/{id}', [CidadaoController::class, 'destroy']);
+Route::put('cidadao/update/{id}', [CidadaoController::class, 'update']);
+Route::post('cidadao/store', [CidadaoController::class, 'store']);
+Route::delete('cidadao/delete/{id}', [CidadaoController::class, 'destroy']);
 
 Route::get('cep', [ViaCepController::class, 'consutaCEP']);
 
