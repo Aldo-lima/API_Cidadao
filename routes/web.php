@@ -14,9 +14,8 @@ use App\Http\Controllers\api\CidadaoController;
 |
 */
 
-Route::post('cidadao/store', [CidadaoController::class, 'store'])->name('salvar');
-Route::get('cidadao/busca', [CidadaoController::class, 'buscaCpf'])->name('busca');
+
 
 Route::get('/', function () {
-    return view('teste');
+    return view('update');
 });

@@ -15,7 +15,7 @@ class Endereco extends Model
     'uf',
     'pessoa_id',
     ];
-    
+
     public function pessoa(){
         return $this->belongsTO(Pessoa::class);
     }

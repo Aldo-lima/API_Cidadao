@@ -7,6 +7,9 @@ use App\Models\Endereco;
 use App\Models\Contato;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StorePessoaRequest;
+use App\Http\Requests\UpdatePessoaRequest;
+
+
 
 class CidadaoController extends Controller
 {
@@ -19,10 +22,10 @@ class CidadaoController extends Controller
     public function index()
     {
 
-          $pessoas = Pessoa::with([ 'endereco','contato'])
-             ->orderBy('nome','asc')
-             ->paginate(5);
-          return response()->json($pessoas);
+         $pessoas = Pessoa::with([ 'endereco','contato'])
+           ->orderBy('nome','asc')
+           ->paginate(10);
+         return response()->json($pessoas);
     }
 
 
@@ -41,7 +44,8 @@ class CidadaoController extends Controller
         $pessoa->contato()->create($request->all());
         $pessoa->endereco()->create($request->all());
         DB::Commit();
-        return  response()->json($pessoa);
+        $menssagem = 'Cidadão incluido com sucesso!';
+        return  response()->json([$menssagem, $pessoa]);
 
     }
     /**
@@ -56,6 +60,19 @@ class CidadaoController extends Controller
        return response()->json( $pessoa->with('contato','endereco')->findOrFail($id));
      //  return  response()->json($pessoa);
      // return $pessoa;
+    }
+
+        /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $pessoa =  Pessoa::find($id);
+
+        return view('update', compact( 'pessoa') );
     }
 
        /**
@@ -74,7 +91,7 @@ class CidadaoController extends Controller
        return $pessoa;
     }
 
-  
+
     /**
      * Update the specified resource in storage.
      *
@@ -82,12 +99,17 @@ class CidadaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePessoaRequest $request, $id)
     {
-        if(!$pessoa = Pessoa::find($id))
-        return response()->json("não ha esta pessoa");
-        $pessoa->update($request->all());
-        return response()->json($pessoa );
+       DB::beginTransaction();
+       $pessoa = Pessoa::find($id);
+       $pessoa->update($request->all());
+       $pessoa->endereco->update($request->all());
+       $pessoa->contato->update($request->all());
+       DB::Commit();
+       $menssagem = 'Cidadão editado com sucesso!';
+       return  response()->json([$menssagem, $pessoa]);
+
     }
 
     /**
@@ -100,5 +122,8 @@ class CidadaoController extends Controller
     {
         $pessoa = Pessoa::FindOrFail($id);
         $pessoa->delete();
+        $menssagem = 'Cidadão deletado com sucesso!';
+        return  response()->json([$menssagem, $pessoa]);
+
     }
 }

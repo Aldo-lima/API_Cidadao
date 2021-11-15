@@ -30,7 +30,17 @@ class ContatoController extends Controller
         return $contato;
     }
 
+    public function update(Request $request, $id)
+    {
 
+
+        $contato = Contato::find($id);
+        $contato->update($request->all());
+
+
+        return response()->json($contato);
+
+    }
 
 
 }

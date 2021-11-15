@@ -17,6 +17,7 @@ use App\Http\Controllers\api\ViaCepController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//=============================Rotas de Cidadão===========================
 Route::get('cidadoes', [CidadaoController::class, 'index']);
 Route::get('cidadaocpf', [CidadaoController::class, 'buscaCpf']);
 Route::get('cidadao/{id}', [CidadaoController::class, 'show']);
@@ -24,11 +25,16 @@ Route::put('cidadao/update/{id}', [CidadaoController::class, 'update']);
 Route::post('cidadao/store', [CidadaoController::class, 'store']);
 Route::delete('cidadao/delete/{id}', [CidadaoController::class, 'destroy']);
 
+
+//==============================Rota via CEP================================
 Route::get('cep', [ViaCepController::class, 'consutaCEP']);
 
+//==============================Rota de Contatos============================
+Route::put('contato/update/{id}', [ContatoController::class, 'update']);
 Route::post('contato', [ContatoController::class, 'store']);
 Route::get('contatos', [ContatoController::class, 'index']);
 
+//==============================Rotas de Endereços=========================
 Route::post('endereco', [EnderecoController::class, 'store']);
 Route::get('enderecos', [EnderecoController::class, 'index']);
 

@@ -21,5 +21,7 @@ class RoutTest extends TestCase
         $response = $this->putjson('/api/cidadao/update/3');
 
         $response->assertStatus(200);
+
+        
     }
 }
