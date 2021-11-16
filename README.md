@@ -74,11 +74,10 @@ Trafegar Jsom
  - listar contato url (http://localhost/api_cidadao/public/api/contatos)
  - create contato url (http://localhost/api_cidadao/public/api/contato/store)
  - update contato url (http://localhost/api_cidadao/public/api/contato/update/  " número do id")
- - delete contato url ( http://localhost/api_cidadao/public/api/contato/delete/ " núnero do id )
  - listar endereçosurl  ( http://localhost/api_cidadao/public/api/enderecos)
  - create Endereço url  ( http://localhost/api_cidadao/public/api/endereco/store)
  - update endereco url ( http://localhost/api_cidadao/public/api/endereco/update/ número do id )
- - delete contato url  ( http://localhost/api_cidadao/public/api/endereco/detete/ número do id)
+
    
 
 
