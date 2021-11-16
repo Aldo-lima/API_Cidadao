@@ -31,11 +31,15 @@ Route::get('cep', [ViaCepController::class, 'consutaCEP']);
 
 //==============================Rota de Contatos============================
 Route::put('contato/update/{id}', [ContatoController::class, 'update']);
-Route::post('contato', [ContatoController::class, 'store']);
+Route::post('contato/store', [ContatoController::class, 'store']);
+Route::put('contato/update/{id}', [ContatoController::class, 'update']);
+Route::delete('contato/delete/{id}', [ContatoController::class, 'destroy']);
 Route::get('contatos', [ContatoController::class, 'index']);
 
 //==============================Rotas de Endereços=========================
-Route::post('endereco', [EnderecoController::class, 'store']);
+Route::post('endereco/store', [EnderecoController::class, 'store']);
+Route::put('endereco/update/{id}', [EnderecoController::class, 'update']);
+Route::delete('endereco/detete/{id}', [EnderecoController::class, 'destroy']);
 Route::get('enderecos', [EnderecoController::class, 'index']);
 
 

@@ -5,6 +5,10 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contato;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ContatoRequest;
+
+
 class ContatoController extends Controller
 {
 
@@ -24,22 +28,34 @@ class ContatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContatoRequest $request)
     {
         $contato = Contato::create($request->all());
-        return $contato;
+        $menssagem = 'Contato incluido com sucesso!';
+        return  response()->json([$menssagem, $contato]);
     }
 
-    public function update(Request $request, $id)
+    public function update(ContatoRequest $request, $id)
     {
-
-
         $contato = Contato::find($id);
         $contato->update($request->all());
+        $menssagem = 'contato editado com sucesso!';
+        return  response()->json([$menssagem, $contato]);
 
+    }
 
-        return response()->json($contato);
-
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $contato = Contato::FindOrFail($id);
+        $contato->delete();
+        $menssagem = 'Contato deletado com sucesso!';
+        return  response()->json([$menssagem, $contato]);
     }
 
 

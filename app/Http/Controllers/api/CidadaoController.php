@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StorePessoaRequest;
 use App\Http\Requests\UpdatePessoaRequest;
 
-
-
 class CidadaoController extends Controller
 {
 
@@ -58,11 +56,9 @@ class CidadaoController extends Controller
     {
        $pessoa = Pessoa::findOrFail($id);
        return response()->json( $pessoa->with('contato','endereco')->findOrFail($id));
-     //  return  response()->json($pessoa);
-     // return $pessoa;
     }
 
-        /**
+     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -70,12 +66,12 @@ class CidadaoController extends Controller
      */
     public function edit($id)
     {
-        $pessoa =  Pessoa::find($id);
-
-        return view('update', compact( 'pessoa') );
+        $pessoa = Pessoa::find($id);
+        $pessoa = Pessoa::findOrFail($id);
+        return response()->json( $pessoa->with('contato','endereco')->findOrFail($id));
     }
 
-       /**
+     /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -86,8 +82,6 @@ class CidadaoController extends Controller
         $cpf = $request->cpf;
         $pessoa = Pessoa::where('cpf', '=',$cpf )
          ->get();
-     //   ->toSql();
-    //     dd($pessoa);
        return $pessoa;
     }
 

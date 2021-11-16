@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePessoaRequest extends FormRequest
+class ContatoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,8 +14,6 @@ class UpdatePessoaRequest extends FormRequest
     public function authorize()
     {
         return true;
-
-
     }
 
     /**
@@ -26,17 +24,9 @@ class UpdatePessoaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome'=> 'bail|required|min:4|max:20',
-            'sobre_nome'=> 'bail|required|min:4|max:20',
-            'cpf'=> 'bail|required|min:11|max:20',
             'telefone' => 'bail|required|integer',
             'email' => 'bail|required|min:8|max:50|email',
-            'cep' => 'bail|required|integer',
-            'logradouro' => 'bail|required|min:4|max:100',
-            'numero'=> 'bail|required|integer',
-            'bairro' => 'bail|required|min:4|max:50',
-            'cidade' => 'bail|required|min:4|max:50',
-            'uf' => 'bail|required|min:2|max:20',
+            'pessoa_id' => 'bail|required|integer',
         ];
     }
 }
