@@ -1,3 +1,81 @@
+# Api Cidadão
+
+## Sobre o Projeto:
+
+A Api_Cidadão é um projeto api, desenvolvido com o propósito de este para vaga de desenvolvedor.
+A aplicação consiste em uma api para manipular dados de cidadão.
+
+
+- Permitir inserir, atualizar e deletar dados de cidadão com: nome, sobrenome, cpf, contatos (email e celular), endereço (cep, logradouro, bairro, cidade e uf);
+- Permitir consultar todos os cidadãos em ordem alfabética crescente (sem filtro);
+- Permitir consultar um cidadão pelo CPF;
+- Não permitir cadastrar cidadão com o mesmo CPF;
+- Permitir que a inserção também seja feita através da Linha de Comando;
+- Com o CEP as informações de logradouro, bairro, cidade e uf devem ser buscadas no ViaCEP
+
+## Formato
+
+         Formato Orientação a Objeto com três classe  Pessoa Contato e Endereço para montar o  cidadão
+     relacionamento um  para muitos  desta forma o Cidadão  pode ter mais de um contato e endereço.
+
+## Tecnologia:
+
+Linguagem php framework Laravel
+Trafegar Jsom
+
+## Configurar ambiente
+ - 1 configura o nome do banco de dados no arquivo .env (DB_DATABASE=api_cidadao)
+ - 2 executar as migate com o comando: ( php artisan  migrate )
+ - 3 inserir dados no banco com o comando: ( php artisan db:seed )
+ 
+## Utilizar
+    exemplo com o Postiman 
+-  1 listar cidadão url ( http://localhost/api_cidadao/public/api/cidadoes )
+-  2 buscar um cidadão pelo CPF  url (  http://localhost/api_cidadao/public/api/cidadaocpf?cpf= número do cpf conforme esta no banco de dados)     
+- inserir um novo cidadão url ( http://localhost/api_cidadao/public/api/cidadao/store )
+- formato jsom  exemplo: {
+   
+            "nome": "Marlene",
+            "sobre_nome": "Santos",
+            "cpf": "884.004.949-00",             
+            "cep": "13185560",
+            "logradouro": "rua da Marlene",
+            "numero": 14,
+            "bairro": "chapadão",
+            "cidade": "Campinas",
+             "uf": "sp" ,          
+             "telefone": 198872845,
+             "email": "Marlene@gmail.com"
+            }
+                
+            
+- update de cidadão url (  http://localhost/api_cidadao/public/api/cidadao/update/ "número do id"
+- formato jsom exemplo : {
+   
+           
+            "nome": "Antonia ",
+            "sobre_nome": "Lima",
+            "cpf": "45145214521",             
+            "cep": 14524,
+            "logradouro": "rua da Antonia",
+            "numero": 14,
+            "bairro": "chapadão",
+            "cidade": "hortolandia",
+             "uf": "sp" ,          
+             "telefone": 47474747,
+             "email": "Antonio@gmail"
+                                
+            }
+- Deletar Cidadão url ( http://localhost/api_cidadao/public/api/cidadao/delete/ " número do id "
+- buca de endereço por cep  url ( http://localhost/api_cidadao/public/api/cep/?cep=13185561)
+
+   
+
+
+        
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
