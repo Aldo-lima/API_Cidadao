@@ -69,6 +69,15 @@ Trafegar Jsom
 - Deletar Cidadão url ( http://localhost/api_cidadao/public/api/cidadao/delete/ " número do id "
 - buca de endereço por cep  url ( http://localhost/api_cidadao/public/api/cep/?cep=13185561)
 
+ O projeto possibilita que um cidadão tenha vários endereços e contatos para manipular esse  usar urls:
+ 
+ - listar contato url (http://localhost/api_cidadao/public/api/contatos)
+ - create contato url (http://localhost/api_cidadao/public/api/contato/store)
+ - update contato url (http://localhost/api_cidadao/public/api/contato/update/  " número do id")
+ - listar endereçosurl  ( http://localhost/api_cidadao/public/api/enderecos)
+ - create Endereço url  ( http://localhost/api_cidadao/public/api/endereco/store)
+ - update endereco url ( http://localhost/api_cidadao/public/api/endereco/update/ número do id )
+
    
 
 
