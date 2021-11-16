@@ -13,6 +13,10 @@ A aplicação consiste em uma api para manipular dados de cidadão.
 - Permitir que a inserção também seja feita através da Linha de Comando;
 - Com o CEP as informações de logradouro, bairro, cidade e uf devem ser buscadas no ViaCEP
 
+## Formato
+
+         Formato Orientação a Objeto com três classe  Pessoa Contato e Endereço para montar o  cidadão
+     relacionamento um  para muitos  desta forma o Cidadão  pode ter mais de um contato e endereço.
 
 ## Tecnologia:
 
@@ -26,10 +30,10 @@ Trafegar Jsom
  
 ## Utilizar
     exemplo com o Postiman 
--  1 listar fornecedores url ( http://localhost/api_cidadao/public/api/cidadoes )
--  2 buscar um fornecedor pelo CPF  url (  http://localhost/api_cidadao/public/api/cidadaocpf?cpf= número do cpf conforme esta no banco de dados)     
-- inserir um novo fornecedor url ( http://localhost/api_cidadao/public/api/cidadao/store )
-- formato jsom {
+-  1 listar cidadão url ( http://localhost/api_cidadao/public/api/cidadoes )
+-  2 buscar um cidadão pelo CPF  url (  http://localhost/api_cidadao/public/api/cidadaocpf?cpf= número do cpf conforme esta no banco de dados)     
+- inserir um novo cidadão url ( http://localhost/api_cidadao/public/api/cidadao/store )
+- formato jsom  exemplo: {
    
             "nome": "Marlene",
             "sobre_nome": "Santos",
@@ -45,8 +49,25 @@ Trafegar Jsom
             }
                 
             
-- Permitir que a inserção também seja feita através da Linha de Comando;
-- Com o CEP as informações de logradouro, bairro, cidade e uf devem ser buscadas no ViaCEP
+- update de cidadão url (  http://localhost/api_cidadao/public/api/cidadao/update/ "número do id"
+- formato jsom exemplo : {
+   
+           
+            "nome": "Antonia ",
+            "sobre_nome": "Lima",
+            "cpf": "45145214521",             
+            "cep": 14524,
+            "logradouro": "rua da Antonia",
+            "numero": 14,
+            "bairro": "chapadão",
+            "cidade": "hortolandia",
+             "uf": "sp" ,          
+             "telefone": 47474747,
+             "email": "Antonio@gmail"
+                                
+            }
+- Deletar Cidadão url ( http://localhost/api_cidadao/public/api/cidadao/delete/ " número do id "
+- buca de endereço por cep  url ( http://localhost/api_cidadao/public/api/cep/?cep=13185561)
 
    
 
