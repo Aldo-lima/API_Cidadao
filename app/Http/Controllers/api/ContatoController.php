@@ -44,19 +44,7 @@ class ContatoController extends Controller
 
     }
 
-        /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $contato = Contato::FindOrFail($id);
-        $contato->delete();
-        $menssagem = 'Contato deletado com sucesso!';
-        return  response()->json([$menssagem, $contato]);
-    }
+    
 
 
 }

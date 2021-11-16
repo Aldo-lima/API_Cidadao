@@ -45,20 +45,5 @@ class EnderecoController extends Controller
         return  response()->json([$menssagem, $endereco]);
 
     }
-          /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $endereco = Endereco::FindOrFail($id);
-        $endereco->delete();
-        $menssagem = 'Endereco deletado com sucesso!';
-        return  response()->json([$menssagem, $endereco]);
-    }
-
-
 
 }

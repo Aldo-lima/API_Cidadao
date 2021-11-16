@@ -20,7 +20,7 @@ class PessoaSeeder extends Seeder
       try {
       DB::transaction(function () {
       });
-      $pessoas = factory(Pessoa::class , 50)->make()->toArray();
+      $pessoas = factory( Pessoa::class ,  50)->make()->toArray();
       foreach ($pessoas as $pessoa){
       $pessoa = Pessoa::create($pessoa);
 
