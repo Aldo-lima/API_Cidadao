@@ -19,14 +19,34 @@ A aplicação consiste em uma api para manipular dados de cidadão.
 Linguagem php framework Laravel
 Trafegar Jsom
 
-## Utilizar
+## Configurar ambiente
  - 1 configura o nome do banco de dados no arquivo .env (DB_DATABASE=api_cidadao)
  - 2 executar as migate com o comando: ( php artisan  migrate )
- - 3 inserir dados no banco com o comando: 
+ - 3 inserir dados no banco com o comando: ( php artisan db:seed )
+ 
+## Utilizar
+    exemplo com o Postiman 
+-  1 listar fornecedores url ( http://localhost/api_cidadao/public/api/cidadoes )
+-  2 buscar um fornecedor pelo CPF  url (  http://localhost/api_cidadao/public/api/cidadaocpf?cpf= número do cpf conforme esta no banco de dados)     
+- inserir um novo fornecedor url ( http://localhost/api_cidadao/public/api/cidadao/store )
+- formato jsom {
+   
+            "nome": "Marlene",
+            "sobre_nome": "Santos",
+            "cpf": "884.004.949-00",             
+            "cep": "13185560",
+            "logradouro": "rua da Marlene",
+            "numero": 14,
+            "bairro": "chapadão",
+            "cidade": "Campinas",
+             "uf": "sp" ,          
+             "telefone": 198872845,
+             "email": "Marlene@gmail.com"
+            }
+                
+            
 - Permitir que a inserção também seja feita através da Linha de Comando;
 - Com o CEP as informações de logradouro, bairro, cidade e uf devem ser buscadas no ViaCEP
-
- 
 
    
 
