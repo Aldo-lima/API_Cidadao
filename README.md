@@ -1,3 +1,40 @@
+# Api Cidadão
+
+## Sobre o Projeto:
+
+A Api_Cidadão é um projeto api, desenvolvido com o propósito de este para vaga de desenvolvedor.
+A aplicação consiste em uma api para manipular dados de cidadão.
+
+
+- Permitir inserir, atualizar e deletar dados de cidadão com: nome, sobrenome, cpf, contatos (email e celular), endereço (cep, logradouro, bairro, cidade e uf);
+- Permitir consultar todos os cidadãos em ordem alfabética crescente (sem filtro);
+- Permitir consultar um cidadão pelo CPF;
+- Não permitir cadastrar cidadão com o mesmo CPF;
+- Permitir que a inserção também seja feita através da Linha de Comando;
+- Com o CEP as informações de logradouro, bairro, cidade e uf devem ser buscadas no ViaCEP
+
+
+## Tecnologia:
+
+Linguagem php framework Laravel
+Trafegar Jsom
+
+## Utilizar
+ - 1 configura o nome do banco de dados no arquivo .env (DB_DATABASE=api_cidadao)
+ - 2 executar as migate com o comando: ( php artisan  migrate )
+ - 3 inserir dados no banco com o comando: 
+- Permitir que a inserção também seja feita através da Linha de Comando;
+- Com o CEP as informações de logradouro, bairro, cidade e uf devem ser buscadas no ViaCEP
+
+ 
+
+   
+
+
+        
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
